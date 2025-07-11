@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="ko" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>호갱탈출 계산기 (최종)</title>
+    <!-- SEO and Share Tags -->
+    <meta name="description" content="휴대폰 구매, 아직도 복잡하게 계산하세요? 통신사 약정(공시지원, 선택약정)과 자급제 구매 시 24개월 총 비용을 비교하여 '호갱'을 탈출하는 가장 현명한 방법을 찾아보세요.">
+    <meta name="keywords" content="휴대폰, 스마트폰, 계산기, 호갱탈출, 공시지원, 선택약정, 자급제, 단통법, 할부원금, 요금계산기, 아이폰, 갤럭시">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="호갱탈출 계산기">
+    <meta property="og:description" content="통신사 약정과 자급제, 어떤 것이 더 유리할까요? 24개월 총 비용을 비교하여 숨겨진 비용을 찾아보세요.">
+    <meta property="og:image" content="https://placehold.co/600x315/7C3AED/FFFFFF?text=호갱탈출+계산기">
+    <meta property="og:url" content="https://[YOUR_SITE_URL]">
+    <link rel="canonical" href="https://[YOUR_SITE_URL]">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="호갱탈출 계산기">
+    <meta name="twitter:description" content="통신사 약정과 자급제, 어떤 것이 더 유리할까요? 24개월 총 비용을 비교하여 숨겨진 비용을 찾아보세요.">
+    <meta name="twitter:image" content="https://placehold.co/600x315/7C3AED/FFFFFF?text=호갱탈출+계산기">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { darkMode: 'class' }
+    </script>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 flex items-center justify-center min-h-screen p-4 font-sans transition-colors duration-300">
+
+    <div class="w-full max-w-lg bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700 transition-colors duration-300">
+        
+        <div class="relative text-center mb-8">
+            <h1 class="text-3xl font-bold text-indigo-600 dark:text-indigo-400">호갱탈출 계산기</h1>
+            <p class="text-slate-500 dark:text-slate-400 mt-2">모델을 검색하고, 약정별 총 비용을 비교하세요.</p>
+            <button id="theme-toggle" class="absolute top-0 right-0 p-2 rounded-full text-slate-500 dark:text-yellow-400 hover:bg-slate-100 dark:hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                <svg id="theme-toggle-dark-icon" class="w-6 h-6 hidden" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                <svg id="theme-toggle-light-icon" class="w-6 h-6 hidden" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm-.707 8.486a1 1 0 011.414 0l.707.707a1 1 0 11-1.414 1.414l-.707-.707a1 1 0 010-1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+
+        <div class="space-y-6">
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">⚖️ 할인 유형</label>
+                    <div class="grid grid-cols-2 gap-2 bg-slate-100 dark:bg-slate-700 p-1 rounded-md">
+                        <div>
+                            <input type="radio" id="discount-type-support" name="discount-type" value="support" class="hidden peer" checked>
+                            <label for="discount-type-support" class="block w-full text-center py-2 px-1 text-sm rounded-md cursor-pointer peer-checked:bg-indigo-600 peer-checked:text-white peer-checked:font-semibold">공시지원</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="discount-type-plan" name="discount-type" value="plan" class="hidden peer">
+                            <label for="discount-type-plan" class="block w-full text-center py-2 px-1 text-sm rounded-md cursor-pointer peer-checked:bg-indigo-600 peer-checked:text-white peer-checked:font-semibold">선택약정</label>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <label for="contract-months" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">📅 약정 개월</label>
+                    <select id="contract-months" class="w-full p-3 text-base bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+                        <option value="12">12개월</option> <option value="24" selected>24개월</option> <option value="36">36개월</option> <option value="48">48개월</option>
+                    </select>
+                </div>
+            </div>
+            <div id="payment-method-container">
+                <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">💳 납부 방식</label>
+                <div class="grid grid-cols-2 gap-2 bg-slate-100 dark:bg-slate-700 p-1 rounded-md">
+                    <div>
+                        <input type="radio" id="payment-method-installments" name="payment-method" value="installments" class="hidden peer" checked>
+                        <label for="payment-method-installments" class="block w-full text-center py-2 px-1 text-sm rounded-md cursor-pointer peer-checked:bg-indigo-600 peer-checked:text-white peer-checked:font-semibold">분납 (이자 5.9%)</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="payment-method-full" name="payment-method" value="full" class="hidden peer">
+                        <label for="payment-method-full" class="block w-full text-center py-2 px-1 text-sm rounded-md cursor-pointer peer-checked:bg-indigo-600 peer-checked:text-white peer-checked:font-semibold">완납</label>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-6">
+                <div class="md:col-span-2 relative">
+                    <label for="device-search" class="block text-sm font-medium text-slate-700 dark:text-slate-300">📱 단말기 모델 검색</label>
+                    <input type="text" id="device-search" class="mt-1 w-full p-3 text-base bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none" placeholder="예: 아이폰, 갤럭시 등">
+                    <div id="autocomplete-results" class="absolute z-10 w-full bg-white dark:bg-slate-600 border border-slate-200 dark:border-slate-500 rounded-lg mt-1 max-h-48 overflow-y-auto hidden shadow-lg"></div>
+                </div>
+                <div>
+                    <label for="device-price" class="block text-sm font-medium text-slate-700 dark:text-slate-300">💰 단말기 출고가</label>
+                    <input type="text" id="device-price" class="numeric-input mt-1 w-full p-3 text-base bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none" value="0">
+                </div>
+                 <div>
+                    <label for="carrier-support" class="block text-sm font-medium text-slate-700 dark:text-slate-300">📡 통신사 지원금</label>
+                    <input type="text" id="carrier-support" class="numeric-input mt-1 w-full p-3 text-base bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none" value="500,000">
+                </div>
+                <div>
+                    <label for="store-support" class="block text-sm font-medium text-slate-700 dark:text-slate-300">🤑 대리점 지원금</label>
+                    <input type="text" id="store-support" class="numeric-input mt-1 w-full p-3 text-base bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none" value="150,000">
+                </div>
+                <div>
+                    <label for="high-plan-fee" class="block text-sm font-medium text-slate-700 dark:text-slate-300">📈 (약정용) 고가 요금제</label>
+                    <input type="text" id="high-plan-fee" class="numeric-input mt-1 w-full p-3 text-base bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none" value="100,000">
+                </div>
+                <div>
+                    <label for="high-plan-months" class="block text-sm font-medium text-slate-700 dark:text-slate-300">🗓️ 의무 사용 기간</label>
+                    <select id="high-plan-months" class="mt-1 w-full p-3 text-base bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+                        <option value="1">1개월</option> <option value="2">2개월</option> <option value="3">3개월</option> <option value="4">4개월</option> <option value="5">5개월</option> <option value="6" selected>6개월</option> <option value="7">7개월</option> <option value="8">8개월</option> <option value="9">9개월</option> <option value="10">10개월</option> <option value="11">11개월</option> <option value="12">12개월</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="real-plan-fee" class="block text-sm font-medium text-slate-700 dark:text-slate-300">👍 (약정용) 실제 요금제</label>
+                    <input type="text" id="real-plan-fee" class="numeric-input mt-1 w-full p-3 text-base bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none" value="55,000">
+                </div>
+                <div class="md:col-span-2">
+                    <label for="vas-fee" class="block text-sm font-medium text-slate-700 dark:text-slate-300">✨ 부가서비스 (월 총액)</label>
+                    <input type="text" id="vas-fee" class="numeric-input mt-1 w-full p-3 text-base bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none" value="11,000">
+                </div>
+                <!-- *** 추가된 부분: 자급제 요금제 입력 *** -->
+                <div class="md:col-span-2 border-t border-slate-200 dark:border-slate-700 pt-6">
+                    <label for="jageupje-plan-fee" class="block text-sm font-medium text-slate-700 dark:text-slate-300">📱 (자급제용) 요금제</label>
+                    <input type="text" id="jageupje-plan-fee" class="numeric-input mt-1 w-full p-3 text-base bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none" value="35,000">
+                    <div class="mt-2 flex items-center">
+                        <input id="jageupje-seonyak-checkbox" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                        <label for="jageupje-seonyak-checkbox" class="ml-2 block text-sm text-slate-600 dark:text-slate-400">선택약정 적용 (-25%)</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="results-section" class="mt-8 border-t-2 border-slate-200 dark:border-slate-700 pt-6">
+            <div class="mb-4">
+                 <div class="flex justify-between items-center bg-indigo-50 dark:bg-slate-900 p-4 rounded-xl">
+                    <h3 class="text-lg font-semibold text-indigo-800 dark:text-indigo-300">최종 할부원금</h3>
+                    <span id="final-device-price" class="text-2xl font-bold text-indigo-800 dark:text-indigo-300">0 원</span>
+                </div>
+            </div>
+            <h2 class="text-xl font-semibold text-center mb-4 text-slate-700 dark:text-slate-300">
+                <span id="total-cost-period">24</span>개월 총 비용 비교
+            </h2>
+            <div class="space-y-3">
+                <div class="bg-slate-100 dark:bg-slate-700 p-4 rounded-xl">
+                    <div class="flex justify-between items-center">
+                        <span class="text-slate-600 dark:text-slate-300">통신사 약정 구매 시</span>
+                        <div class="flex items-center gap-2">
+                            <span id="yakjeong-result" class="text-lg font-bold text-red-600 dark:text-red-400">0 원</span>
+                            <button id="yakjeong-details-toggle-btn" class="p-1 rounded-full hover:bg-slate-200 dark:hover:bg-slate-600">
+                                <svg id="yakjeong-details-toggle-icon" class="w-5 h-5 text-slate-500 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="yakjeong-details" class="hidden mt-4 pt-4 border-t border-slate-200 dark:border-slate-600">
+                        <div class="space-y-3 text-sm">
+                            <div>
+                                <p class="font-semibold text-slate-700 dark:text-slate-200">초기 <span id="details-high-months"></span>개월 월 납부액</p>
+                                <div class="pl-4 mt-1 text-xs text-slate-500 dark:text-slate-400 space-y-1">
+                                    <div id="details-installment-container1">
+                                        <p>월 할부원금: <span id="details-monthly-principal1"></span>원</p>
+                                        <p>월 할부이자: <span id="details-monthly-interest1"></span>원</p>
+                                    </div>
+                                    <p>월 통신 요금: <span id="details-monthly-plan-cost1"></span>원</p>
+                                    <p>월 부가서비스: <span id="details-monthly-vas-cost"></span>원</p>
+                                </div>
+                                <p class="font-bold text-right text-base text-slate-800 dark:text-slate-100">= 월 <span id="details-total-monthly1"></span>원</p>
+                            </div>
+                            <hr class="border-slate-200 dark:border-slate-600">
+                            <div>
+                                <p class="font-semibold text-slate-700 dark:text-slate-200">이후 월 납부액</p>
+                                <div class="pl-4 mt-1 text-xs text-slate-500 dark:text-slate-400 space-y-1">
+                                    <div id="details-installment-container2">
+                                        <p>월 할부원금: <span id="details-monthly-principal2"></span>원</p>
+                                        <p>월 할부이자: <span id="details-monthly-interest2"></span>원</p>
+                                    </div>
+                                    <p>월 통신 요금: <span id="details-monthly-plan-cost2"></span>원</p>
+                                </div>
+                                <p class="font-bold text-right text-base text-slate-800 dark:text-slate-100">= 월 <span id="details-total-monthly2"></span>원</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-100 dark:bg-slate-700 p-4 rounded-xl">
+                    <div class="flex justify-between items-center">
+                        <span class="text-slate-600 dark:text-slate-300">자급제 구매 시</span>
+                        <div class="flex items-center gap-2">
+                            <span id="jageupje-result" class="text-lg font-bold text-green-600 dark:text-green-400">0 원</span>
+                            <button id="jageupje-details-toggle-btn" class="p-1 rounded-full hover:bg-slate-200 dark:hover:bg-slate-600">
+                                <svg id="jageupje-details-toggle-icon" class="w-5 h-5 text-slate-500 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="jageupje-details" class="hidden mt-4 pt-4 border-t border-slate-200 dark:border-slate-600">
+                        <div class="space-y-3 text-sm">
+                             <div>
+                                <p class="font-semibold text-slate-700 dark:text-slate-200">매월 납부액</p>
+                                <div class="pl-4 mt-1 text-xs text-slate-500 dark:text-slate-400 space-y-1">
+                                    <p>월 단말기 할부: 0 원</p>
+                                    <p>월 통신 요금: <span id="details-jageupje-plan-cost"></span>원</p>
+                                </div>
+                                <p class="font-bold text-right text-base text-slate-800 dark:text-slate-100">= 월 <span id="details-jageupje-total-monthly"></span>원</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <a id="buy-link" href="#" target="_blank" class="block w-full py-2.5 px-4 bg-indigo-600 hover:bg-indigo-700 rounded-lg text-white font-semibold transition-transform transform hover:scale-105">
+                            쿠팡에서 구매하기
+                        </a>
+                        <p class="text-xs text-slate-400 dark:text-slate-500 mt-2">
+                            이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.
+                        </p>
+                    </div>
+                </div>
+                <div id="savings-highlight" class="bg-green-100 dark:bg-green-900/50 border border-green-300 dark:border-green-700 p-4 rounded-xl text-center mt-4"><p class="text-green-800 dark:text-green-300"><span id="winner-text"></span><strong id="savings-amount" class="text-xl"></strong> 더 저렴합니다!</p></div>
+            </div>
+        </div>
+
+        <div class="mt-8 text-center">
+            <button id="reset-settings" class="text-sm text-slate-400 hover:text-indigo-500 dark:hover:text-indigo-400">설정 초기화</button>
+        </div>
+    </div>
+
+    <div id="reset-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden z-50">
+        <div class="bg-white dark:bg-slate-800 rounded-lg shadow-xl p-6 w-full max-w-sm text-center">
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white">설정 초기화</h3>
+            <p class="text-sm text-slate-500 dark:text-slate-400 mt-2 mb-6">저장된 모든 설정을 지우고 초기 상태로 되돌리시겠습니까?</p>
+            <div class="flex justify-center gap-4">
+                <button id="cancel-reset" class="py-2 px-4 bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-200 rounded-md hover:bg-slate-300 dark:hover:bg-slate-500">취소</button>
+                <button id="confirm-reset" class="py-2 px-4 bg-red-500 text-white rounded-md hover:bg-red-600">초기화</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- 테마 관리 ---
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const darkIcon = document.getElementById('theme-toggle-dark-icon');
+        const lightIcon = document.getElementById('theme-toggle-light-icon');
+        const updateIcons = (isDarkMode) => {
+            darkIcon.classList.toggle('hidden', !isDarkMode);
+            lightIcon.classList.toggle('hidden', isDarkMode);
+        };
+        const setTheme = (isDarkMode) => {
+            document.documentElement.classList.toggle('dark', isDarkMode);
+            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+            updateIcons(isDarkMode);
+        };
+        const currentTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const isDarkMode = currentTheme === 'dark' || (currentTheme === null && prefersDark);
+        setTheme(isDarkMode);
+        themeToggleBtn.addEventListener('click', () => {
+            setTheme(!document.documentElement.classList.contains('dark'));
+        });
+
+        // --- 계산기 로직 ---
+        const phoneData = [
+            {
+                "name": "갤럭시 와이드7 128G",
+                "price": "374000",
+                "link": "https://link.coupang.com/a/cEbFhH"
+            },
+            {
+                "name": "갤럭시 와이드8 128G",
+                "price": "374000",
+                "link": "https://link.coupang.com/a/cEbFhH"
+            },
+            {
+                "name": "갤럭시 퀀텀5 128G",
+                "price": "618200",
+                "link": "https://link.coupang.com/a/cEbFhH"
+            },
+            {
+                "name": "갤럭시 A25 5G 128G",
+                "price": "449900",
+                "link": "https://link.coupang.com/a/cEbFhH"
+            },
+            {
+                "name": "갤럭시 A35 5G 128G",
+                "price": "499400",
+                "link": "https://link.coupang.com/a/cEbFhH"
+            },
+            {
+                "name": "갤럭시 A36 128G",
+                "price": "499400",
+                "link": "https://link.coupang.com/a/cEbzIA"
+            },
+            {
+                "name": "갤럭시 S24 5G 256G",
+                "price": "1155000",
+                "link": "https://link.coupang.com/a/cEbFhH"
+            },
+            {
+                "name": "갤럭시 S24 5G 512G",
+                "price": "1298000",
+                "link": "https://link.coupang.com/a/cEbFhH"
+            },
+            {
+                "name": "갤럭시 S24 울트라 5G 256G",
+                "price": "1698400",
+                "link": "https://link.coupang.com/a/cEbFhH"
+            },
+            {
+                "name": "갤럭시 S24 울트라 5G 512G",
+                "price": "1841400",
+                "link": "https://link.coupang.com/a/cEbFhH"
+            },
+            {
+                "name": "갤럭시 S24 FE 256G",
+                "price": "946000",
+                "link": "https://link.coupang.com/a/cEbBI0"
+            },
+            {
+                "name": "갤럭시 S24+ 5G 256G",
+                "price": "1353000",
+                "link": "https://link.coupang.com/a/cEbFhH"
+            },
+            {
+                "name": "갤럭시 S24+ 5G 512G",
+                "price": "1496000",
+                "link": "https://link.coupang.com/a/cEbFhH"
+            },
+            {
+                "name": "갤럭시 S25 256G",
+                "price": "1155000",
+                "link": "https://link.coupang.com/a/cEbCj9"
+            },
+            {
+                "name": "갤럭시 S25 512G",
+                "price": "1298000",
+                "link": "https://link.coupang.com/a/cEbCqG"
+            },
+            {
+                "name": "갤럭시 S25 엣지 256G",
+                "price": "1496000",
+                "link": "https://link.coupang.com/a/cEbCLI"
+            },
+            {
+                "name": "갤럭시 S25 엣지 512G",
+                "price": "1639000",
+                "link": "https://link.coupang.com/a/cEbCPJ"
+            },
+            {
+                "name": "갤럭시 S25 울트라 1T",
+                "price": "2127400",
+                "link": "https://link.coupang.com/a/cEbCXL"
+            },
+            {
+                "name": "갤럭시 S25 울트라 256G",
+                "price": "1698400",
+                "link": "https://link.coupang.com/a/cEbC6q"
+            },
+            {
+                "name": "갤럭시 S25 울트라 512G",
+                "price": "1841400",
+                "link": "https://link.coupang.com/a/cEbC2v"
+            },
+            {
+                "name": "갤럭시 S25+ 256G",
+                "price": "1353000",
+                "link": "https://link.coupang.com/a/cEbDsx"
+            },
+            {
+                "name": "갤럭시 S25+ 512G",
+                "price": "1496000",
+                "link": "https://link.coupang.com/a/cEbDRT"
+            },
+            {
+                "name": "갤럭시 Z 폴드6 1T",
+                "price": "2704900",
+                "link": "https://link.coupang.com/a/cEbEO4"
+            },
+            {
+                "name": "갤럭시 Z 폴드6 256G",
+                "price": "2229700",
+                "link": "https://link.coupang.com/a/cEbEDb"
+            },
+            {
+                "name": "갤럭시 Z 폴드6 512G",
+                "price": "2388100",
+                "link": "https://link.coupang.com/a/cEbEUN"
+            },
+            {
+                "name": "갤럭시 Z 플립6 256G",
+                "price": "1485000",
+                "link": "https://link.coupang.com/a/cEbFbR"
+            },
+            {
+                "name": "갤럭시 Z 플립6 512G",
+                "price": "1643400",
+                "link": "https://link.coupang.com/a/cEbE8b"
+            },
+            {
+                "name": "아이폰16 128GB",
+                "price": "1250000",
+                "link": "https://link.coupang.com/a/cEbKmN"
+            },
+            {
+                "name": "아이폰16 256GB",
+                "price": "1400000",
+                "link": "https://link.coupang.com/a/cEbKra"
+            },
+            {
+                "name": "아이폰16 512GB",
+                "price": "1700000",
+                "link": "https://link.coupang.com/a/cEbKuj"
+            },
+            {
+                "name": "아이폰16 프로 128GB",
+                "price": "1550000",
+                "link": "https://link.coupang.com/a/cEbKEB"
+            },
+            {
+                "name": "아이폰16 프로 256GB",
+                "price": "1700000",
+                "link": "https://link.coupang.com/a/cEbKJE"
+            },
+            {
+                "name": "아이폰16 프로 512GB",
+                "price": "2000000",
+                "link": "https://link.coupang.com/a/cEbKNv"
+            },
+            {
+                "name": "아이폰16 프로 1TB",
+                "price": "2300000",
+                "link": "https://link.coupang.com/a/cEbKSx"
+            },
+            {
+                "name": "아이폰16 프로 맥스 256GB",
+                "price": "1900000",
+                "link": "https://link.coupang.com/a/cEbKZa"
+            },
+            {
+                "name": "아이폰16 프로 맥스 512GB",
+                "price": "2200000",
+                "link": "https://link.coupang.com/a/cEbK3z"
+            },
+            {
+                "name": "아이폰16 프로 맥스 1TB",
+                "price": "2500000",
+                "link": "https://link.coupang.com/a/cEbK95"
+            },
+            {
+                "name": "아이폰16 플러스 128GB",
+                "price": "1350000",
+                "link": "https://link.coupang.com/a/cEbLjc"
+            },
+            {
+                "name": "아이폰16 플러스 256GB",
+                "price": "1500000",
+                "link": "https://link.coupang.com/a/cEbLnC"
+            },
+            {
+                "name": "아이폰16 플러스 512GB",
+                "price": "1800000",
+                "link": "https://link.coupang.com/a/cEbLq0"
+            },
+            {
+                "name": "아이폰16e 128GB",
+                "price": "990000",
+                "link": "https://link.coupang.com/a/cEbLzP"
+            },
+            {
+                "name": "아이폰16e 256GB",
+                "price": "1140000",
+                "link": "https://link.coupang.com/a/cEbLL2"
+            },
+            {
+                "name": "아이폰16e 512GB",
+                "price": "1440000",
+                "link": "https://link.coupang.com/a/cEbLP0"
+            }
+            ];
+        
+        let highlightedIndex = -1;
+        
+        const allInputs = document.querySelectorAll('input, select');
+        const deviceSearchInput = document.getElementById('device-search');
+        const devicePriceInput = document.getElementById('device-price');
+        const autocompleteResults = document.getElementById('autocomplete-results');
+        const carrierSupportInput = document.getElementById('carrier-support');
+        const storeSupportInput = document.getElementById('store-support');
+        const contractMonthsSelect = document.getElementById('contract-months');
+        const highPlanFeeInput = document.getElementById('high-plan-fee');
+        const highPlanMonthsSelect = document.getElementById('high-plan-months');
+        const realPlanFeeInput = document.getElementById('real-plan-fee');
+        const vasFeeInput = document.getElementById('vas-fee');
+        const buyLink = document.getElementById('buy-link');
+        const resetBtn = document.getElementById('reset-settings');
+        const resetModal = document.getElementById('reset-modal');
+        const cancelResetBtn = document.getElementById('cancel-reset');
+        const confirmResetBtn = document.getElementById('confirm-reset');
+        const yakjeongDetailsToggleBtn = document.getElementById('yakjeong-details-toggle-btn');
+        const yakjeongDetailsToggleIcon = document.getElementById('yakjeong-details-toggle-icon');
+        const yakjeongDetails = document.getElementById('yakjeong-details');
+        const jageupjeDetailsToggleBtn = document.getElementById('jageupje-details-toggle-btn');
+        const jageupjeDetailsToggleIcon = document.getElementById('jageupje-details-toggle-icon');
+        const jageupjeDetails = document.getElementById('jageupje-details');
+        const paymentMethodContainer = document.getElementById('payment-method-container');
+        const jageupjePlanFeeInput = document.getElementById('jageupje-plan-fee');
+        const jageupjeSeonyakCheckbox = document.getElementById('jageupje-seonyak-checkbox');
+
+        const formatWithCommas = (num) => num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        const parseNumber = (str) => parseFloat(String(str).replace(/,/g, '')) || 0;
+
+        function updateAndSave() {
+            const devicePrice = parseNumber(devicePriceInput.value);
+            const discountType = document.querySelector('input[name="discount-type"]:checked').value;
+            const paymentMethod = document.querySelector('input[name="payment-method"]:checked').value;
+            let carrierSupport = parseNumber(carrierSupportInput.value);
+            let storeSupport = parseNumber(storeSupportInput.value);
+            const highPlanFee = parseNumber(highPlanFeeInput.value);
+            const highPlanMonths = parseInt(highPlanMonthsSelect.value) || 0;
+            const realPlanFee = parseNumber(realPlanFeeInput.value);
+            const vasFee = parseNumber(vasFeeInput.value);
+            const contractMonths = parseInt(contractMonthsSelect.value);
+            let jageupjePlanFee = parseNumber(jageupjePlanFeeInput.value);
+
+            const isPlanDiscount = discountType === 'plan';
+            [carrierSupportInput, storeSupportInput].forEach(input => {
+                input.disabled = isPlanDiscount;
+                input.classList.toggle('bg-slate-200', isPlanDiscount);
+                input.classList.toggle('dark:bg-slate-900', isPlanDiscount);
+                input.classList.toggle('opacity-60', isPlanDiscount);
+            });
+
+            if (isPlanDiscount) {
+                carrierSupport = 0;
+                storeSupport = 0;
+            }
+            
+            const finalDevicePrice = devicePrice - carrierSupport - storeSupport;
+            document.getElementById('final-device-price').innerText = `${formatWithCommas(Math.round(finalDevicePrice))} 원`;
+
+            let yakjeongTotalCost = 0;
+            let monthlyDeviceCost = 0;
+            let monthlyPrincipal = 0;
+            let monthlyInterest = 0;
+            let monthlyPlanFee1 = highPlanFee;
+            let monthlyPlanFee2 = realPlanFee;
+
+            if (isPlanDiscount) {
+                monthlyPlanFee1 *= 0.75;
+                monthlyPlanFee2 *= 0.75;
+            }
+            
+            const principalForInstallment = isPlanDiscount ? devicePrice : finalDevicePrice;
+
+            if (paymentMethod === 'installments' && principalForInstallment > 0) {
+                const monthlyInterestRate = 0.059 / 12;
+                const n = contractMonths;
+                monthlyDeviceCost = principalForInstallment * (monthlyInterestRate * Math.pow(1 + monthlyInterestRate, n)) / (Math.pow(1 + monthlyInterestRate, n) - 1);
+                const totalInterest = (monthlyDeviceCost * n) - principalForInstallment;
+                monthlyInterest = totalInterest / n;
+                monthlyPrincipal = monthlyDeviceCost - monthlyInterest;
+                yakjeongTotalCost = principalForInstallment + totalInterest + (highPlanFee * highPlanMonths) + (realPlanFee * (contractMonths - highPlanMonths)) + (vasFee * highPlanMonths);
+            } else {
+                yakjeongTotalCost = principalForInstallment + (highPlanFee * highPlanMonths) + (realPlanFee * (contractMonths - highPlanMonths)) + (vasFee * highPlanMonths);
+            }
+            
+            if (jageupjeSeonyakCheckbox.checked) {
+                jageupjePlanFee *= 0.75;
+            }
+            const jageupjeTotalCost = devicePrice + (jageupjePlanFee * contractMonths);
+            
+            document.getElementById('total-cost-period').innerText = contractMonths;
+            document.getElementById('yakjeong-result').innerText = `${formatWithCommas(Math.round(yakjeongTotalCost))} 원`;
+            document.getElementById('jageupje-result').innerText = `${formatWithCommas(Math.round(jageupjeTotalCost))} 원`;
+            const savings = Math.abs(yakjeongTotalCost - jageupjeTotalCost);
+            document.getElementById('winner-text').innerText = yakjeongTotalCost > jageupjeTotalCost ? '자급제가 ' : '약정 구매가 ';
+            document.getElementById('savings-amount').innerText = `${formatWithCommas(Math.round(savings))} 원`;
+
+            const installmentContainer1 = document.getElementById('details-installment-container1');
+            const installmentContainer2 = document.getElementById('details-installment-container2');
+            
+            installmentContainer1.classList.toggle('hidden', paymentMethod !== 'installments' || monthlyDeviceCost <= 0);
+            installmentContainer2.classList.toggle('hidden', paymentMethod !== 'installments' || monthlyDeviceCost <= 0);
+
+            document.getElementById('details-high-months').innerText = highPlanMonths;
+            document.getElementById('details-monthly-principal1').innerText = formatWithCommas(Math.round(monthlyPrincipal));
+            document.getElementById('details-monthly-interest1').innerText = formatWithCommas(Math.round(monthlyInterest));
+            document.getElementById('details-monthly-plan-cost1').innerText = formatWithCommas(Math.round(monthlyPlanFee1));
+            document.getElementById('details-monthly-vas-cost').innerText = formatWithCommas(Math.round(vasFee));
+            document.getElementById('details-total-monthly1').innerText = formatWithCommas(Math.round(monthlyDeviceCost + monthlyPlanFee1 + vasFee));
+            
+            document.getElementById('details-monthly-principal2').innerText = formatWithCommas(Math.round(monthlyPrincipal));
+            document.getElementById('details-monthly-interest2').innerText = formatWithCommas(Math.round(monthlyInterest));
+            document.getElementById('details-monthly-plan-cost2').innerText = formatWithCommas(Math.round(monthlyPlanFee2));
+            document.getElementById('details-total-monthly2').innerText = formatWithCommas(Math.round(monthlyDeviceCost + monthlyPlanFee2));
+
+            document.getElementById('details-jageupje-plan-cost').innerText = formatWithCommas(Math.round(jageupjePlanFee));
+            document.getElementById('details-jageupje-total-monthly').innerText = formatWithCommas(Math.round(jageupjePlanFee));
+
+            const state = {
+                discountType: document.querySelector('input[name="discount-type"]:checked').value,
+                paymentMethod: document.querySelector('input[name="payment-method"]:checked').value,
+                contractMonths: contractMonthsSelect.value,
+                deviceSearch: deviceSearchInput.value,
+                devicePrice: devicePriceInput.value,
+                carrierSupport: carrierSupportInput.value,
+                storeSupport: storeSupportInput.value,
+                highPlanFee: highPlanFeeInput.value,
+                highPlanMonths: highPlanMonthsSelect.value,
+                realPlanFee: realPlanFeeInput.value,
+                vasFee: vasFeeInput.value,
+                jageupjePlanFee: jageupjePlanFeeInput.value,
+                jageupjeSeonyak: jageupjeSeonyakCheckbox.checked
+            };
+            localStorage.setItem('calculatorState', JSON.stringify(state));
+        }
+
+        function loadState() {
+            const savedState = localStorage.getItem('calculatorState');
+            if (savedState) {
+                const state = JSON.parse(savedState);
+                document.querySelector(`input[name="discount-type"][value="${state.discountType}"]`).checked = true;
+                if(state.paymentMethod) document.querySelector(`input[name="payment-method"][value="${state.paymentMethod}"]`).checked = true;
+                contractMonthsSelect.value = state.contractMonths;
+                deviceSearchInput.value = state.deviceSearch;
+                devicePriceInput.value = formatWithCommas(parseNumber(state.devicePrice));
+                carrierSupportInput.value = formatWithCommas(parseNumber(state.carrierSupport));
+                storeSupportInput.value = formatWithCommas(parseNumber(state.storeSupport));
+                highPlanFeeInput.value = formatWithCommas(parseNumber(state.highPlanFee));
+                highPlanMonthsSelect.value = state.highPlanMonths;
+                realPlanFeeInput.value = formatWithCommas(parseNumber(state.realPlanFee));
+                vasFeeInput.value = formatWithCommas(parseNumber(state.vasFee));
+                jageupjePlanFeeInput.value = formatWithCommas(parseNumber(state.jageupjePlanFee));
+                jageupjeSeonyakCheckbox.checked = state.jageupjeSeonyak;
+                
+                const savedPhone = phoneData.find(p => p.name === state.deviceSearch);
+                if (savedPhone) { buyLink.href = savedPhone.link; }
+            } else {
+                selectPhone(phoneData[0]);
+            }
+        }
+
+        function selectPhone(phone) {
+            deviceSearchInput.value = phone.name;
+            devicePriceInput.value = formatWithCommas(phone.price);
+            buyLink.href = phone.link;
+            autocompleteResults.innerHTML = '';
+            autocompleteResults.classList.add('hidden');
+            updateAndSave();
+        }
+
+        function updateHighlight() {
+            const items = autocompleteResults.querySelectorAll('div');
+            items.forEach((item, index) => {
+                const isHighlighted = index === highlightedIndex;
+                item.classList.toggle('bg-indigo-600', isHighlighted);
+                item.classList.toggle('text-white', isHighlighted);
+                if (isHighlighted) { item.scrollIntoView({ block: 'nearest' }); }
+            });
+        }
+
+        deviceSearchInput.addEventListener('input', () => {
+            const query = deviceSearchInput.value.toLowerCase();
+            if (!query) { autocompleteResults.classList.add('hidden'); return; }
+            const filteredPhones = phoneData.filter(phone => phone.name.toLowerCase().includes(query));
+            if (filteredPhones.length > 0) {
+                autocompleteResults.innerHTML = filteredPhones.map(phone => 
+                    `<div class="p-3 hover:bg-indigo-600 hover:text-white cursor-pointer" data-name="${phone.name}" data-price="${phone.price}" data-link="${phone.link}">
+                        ${phone.name} <span class="text-sm text-slate-400 dark:text-slate-400">${formatWithCommas(phone.price)}원</span>
+                    </div>`
+                ).join('');
+                autocompleteResults.classList.remove('hidden');
+                highlightedIndex = -1;
+            } else { autocompleteResults.classList.add('hidden'); }
+        });
+
+        deviceSearchInput.addEventListener('keydown', (e) => {
+            const items = autocompleteResults.querySelectorAll('div');
+            if (items.length === 0 || autocompleteResults.classList.contains('hidden')) return;
+            if (e.key === 'ArrowDown') { e.preventDefault(); highlightedIndex = (highlightedIndex + 1) % items.length; } 
+            else if (e.key === 'ArrowUp') { e.preventDefault(); highlightedIndex = (highlightedIndex - 1 + items.length) % items.length; } 
+            else if (e.key === 'Enter') {
+                e.preventDefault();
+                if (highlightedIndex > -1) {
+                    const selectedItem = items[highlightedIndex];
+                    selectPhone({ name: selectedItem.dataset.name, price: parseFloat(selectedItem.dataset.price), link: selectedItem.dataset.link });
+                }
+            }
+            updateHighlight();
+        });
+
+        autocompleteResults.addEventListener('click', (e) => {
+            const target = e.target.closest('div');
+            if (target && target.dataset.name) {
+                selectPhone({ name: target.dataset.name, price: parseFloat(target.dataset.price), link: target.dataset.link });
+            }
+        });
+        
+        document.addEventListener('click', (e) => {
+            if (!deviceSearchInput.contains(e.target) && !autocompleteResults.contains(e.target)) {
+                autocompleteResults.classList.add('hidden');
+            }
+        });
+
+        allInputs.forEach(input => {
+            if (input.tagName.toLowerCase() === 'input' && input.classList.contains('numeric-input')) {
+                input.addEventListener('input', (e) => {
+                    const value = e.target.value;
+                    const parsedValue = parseNumber(value);
+                    if (document.activeElement === e.target) {
+                      e.target.value = formatWithCommas(parsedValue);
+                    }
+                });
+            }
+            const eventType = (input.type === 'radio' || input.tagName.toLowerCase() === 'select' || input.type === 'checkbox') ? 'change' : 'input';
+            input.addEventListener(eventType, updateAndSave);
+        });
+        
+        resetBtn.addEventListener('click', () => {
+            resetModal.classList.remove('hidden');
+        });
+        cancelResetBtn.addEventListener('click', () => {
+            resetModal.classList.add('hidden');
+        });
+        confirmResetBtn.addEventListener('click', () => {
+            localStorage.removeItem('calculatorState');
+            window.location.href = window.location.pathname;
+        });
+
+        yakjeongDetailsToggleBtn.addEventListener('click', () => {
+            yakjeongDetails.classList.toggle('hidden');
+            yakjeongDetailsToggleIcon.classList.toggle('rotate-180');
+        });
+        jageupjeDetailsToggleBtn.addEventListener('click', () => {
+            jageupjeDetails.classList.toggle('hidden');
+            jageupjeDetailsToggleIcon.classList.toggle('rotate-180');
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadState();
+            updateAndSave();
+        });
+    </script>
+</body>
+</html>
