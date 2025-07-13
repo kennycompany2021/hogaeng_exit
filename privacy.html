@@ -26,6 +26,24 @@
                 padding-bottom: 72px;
             }
         }
+        /* 이용약관, 개인정보처리방침 가독성 향상을 위한 행간 조절 */
+        .prose p,
+        .prose li {
+            line-height: 1.8;
+        }
+        /* UI 개선: 섹션 구분 및 여백 추가 */
+        .prose h3 {
+            margin-top: 3em;
+            margin-bottom: 1.2em;
+            padding-bottom: 0.4em;
+            border-bottom: 1px solid #e5e7eb; /* light-mode border */
+        }
+        .prose h3:first-child {
+            margin-top: 0;
+        }
+        .dark .prose h3 {
+            border-bottom-color: #374151; /* dark-mode border */
+        }
     </style>
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5158874421301520"
@@ -112,9 +130,10 @@
                 <h3>제8조 (개인정보처리방침의 변경에 관한 사항)</h3>
                 <p>본 개인정보처리방침의 내용 추가, 삭제 및 수정이 있을 경우, 개정 최소 7일 전에 '서비스' 웹사이트의 공지사항 또는 이메일을 통해 고지할 것입니다.</p>
 
-                <br>
-                <p><strong>공고일자:</strong> 2025년 07월 14일</p>
-                <p><strong>시행일자:</strong> 2025년 07월 14일</p>
+                <div class="mt-12 pt-6 border-t border-slate-200 dark:border-slate-700 text-sm text-slate-500 dark:text-slate-400">
+                    <p class="!my-2"><strong>공고일자:</strong> 2024년 7월 26일</p>
+                    <p class="!my-2"><strong>시행일자:</strong> 2024년 7월 26일</p>
+                </div>
             </article>
         </div>
     </main>
