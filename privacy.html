@@ -20,15 +20,20 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 font-sans transition-colors duration-300 flex flex-col min-h-screen">
-    <header class="bg-white dark:bg-slate-800 shadow-sm sticky top-0 z-40 w-full">
+    <header class="bg-white dark:bg-slate-800 shadow-sm fixed top-0 left-0 right-0 z-40 w-full">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
-                <div class="flex items-center">
-                    <a href="index.html" class="flex-shrink-0 flex items-center space-x-2">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="flex items-center space-x-2">
                         <img class="h-8 w-auto" src="logo_trans.svg" alt="호갱탈출 계산기 로고">
                         <span class="text-xl font-bold text-indigo-600 dark:text-indigo-400 hidden sm:inline">호갱탈출 계산기</span>
                     </a>
                 </div>
+
+                <div class="flex-1 flex justify-center items-center sm:hidden">
+                    <span class="text-lg font-bold text-indigo-600 dark:text-indigo-400">호갱탈출 계산기</span>
+                </div>
+
                 <div class="flex items-center">
                     <nav class="hidden md:flex items-baseline space-x-4">
                         <a href="about-us.html" class="text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">서비스 소개</a>
@@ -45,12 +50,9 @@
         </div>
     </header>
     
-    <main class="w-full flex-grow p-4 sm:p-6 lg:p-8 pb-24">
-        <div class="max-w-4xl mx-auto bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700 transition-colors duration-300">
-            <div class="text-center mb-8">
-                <h1 class="text-3xl font-bold text-indigo-600 dark:text-indigo-400">개인정보처리방침</h1>
-                <p class="mt-2 text-slate-500 dark:text-slate-400">시행일: 2024년 7월 15일</p>
-            </div>
+    <main class="w-full flex-grow p-4 sm:p-6 lg:p-8 pb-24 pt-16">
+        <div class="max-w-4xl mx-auto bg-white dark:bg-slate-800 p-8 sm:p-12 rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700">
+            <h1 class="text-3xl font-bold text-slate-900 dark:text-white mb-6">개인정보 처리방침</h1>
             <article class="prose dark:prose-invert max-w-none">
                 
                 <p>호갱탈출 계산기(이하 '서비스')는 정보통신망 이용촉진 및 정보보호 등에 관한 법률, 개인정보보호법 등 관련 법령상의 개인정보보호 규정을 준수하며, 관련 법령에 의거한 개인정보처리방침을 정하여 이용자 권익 보호에 최선을 다하고 있습니다. 본 개인정보처리방침은 서비스 이용에 대한 안내입니다.</p>
