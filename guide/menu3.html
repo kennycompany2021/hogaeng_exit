@@ -18,6 +18,15 @@
         tailwind.config = { darkMode: 'class' }
     </script>
     <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        /* 모바일에서 하단 고정 네비게이션에 콘텐츠가 가려지지 않도록 body에 여백 추가 */
+        @media (max-width: 767px) {
+            body {
+                /* 하단 네비게이션 높이(56px) + 약간의 여유 공간 */
+                padding-bottom: 72px;
+            }
+        }
+    </style>
 </head>
 <body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 font-sans transition-colors duration-300 flex flex-col min-h-screen">
     <header class="bg-white dark:bg-slate-800 shadow-sm fixed top-0 left-0 right-0 z-40 w-full">
@@ -135,6 +144,27 @@
         </div>
     </main>
  
+    <!-- Responsive Footer -->
+    <footer class="text-sm">
+        <!-- Mobile Footer (at the bottom of page content) -->
+        <div class="md:hidden w-full py-6 mt-8 border-t border-slate-200 dark:border-slate-700">
+            <div class="flex justify-center items-center space-x-4">
+                <a href="../terms.html" class="text-slate-500 hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400">이용약관</a>
+                <span class="text-slate-300 dark:text-slate-600">|</span>
+                <a href="../privacy.html" class="text-slate-500 hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400">개인정보처리방침</a>
+            </div>
+        </div>
+
+        <!-- Desktop Footer (at the bottom of page content) -->
+        <div class="hidden md:flex justify-center items-center py-8 mt-8 border-t border-slate-200 dark:border-slate-700">
+            <div class="flex items-center space-x-6">
+                <a href="../terms.html" class="text-slate-500 hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400">이용약관</a>
+                <a href="../privacy.html" class="text-slate-500 hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400">개인정보처리방침</a>
+                <span class="text-slate-400 dark:text-slate-500">© 2025 Hogaeng Exit. All Rights Reserved.</span>
+            </div>
+        </div>
+    </footer>
+
      <!-- Bottom Navigation Bar (Mobile Only) -->
      <nav class="md:hidden fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 shadow-t-lg z-50">
         <div class="flex justify-around max-w-4xl mx-auto">
