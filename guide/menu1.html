@@ -64,8 +64,9 @@
                         <div class="w-full md:w-5/12 text-center flex flex-col items-center">
                             <div class="w-20 h-20 bg-red-100 dark:bg-red-900/50 rounded-full flex justify-center items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-red-500 dark:text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 8h-4.5a1.5 1.5 0 00-1.5 1.5V12a1.5 1.5 0 001.5 1.5H15M15 8a2 2 0 100-4M15 8a2 2 0 110-4" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M16 12h.01" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11 17h2" />
                                 </svg>
                             </div>
                             <h3 class="font-bold text-xl text-red-700 dark:text-red-400 mt-3">공시지원</h3>
@@ -81,9 +82,8 @@
                         <div class="w-full md:w-5/12 text-center flex flex-col items-center">
                              <div class="w-20 h-20 bg-blue-100 dark:bg-blue-900/50 rounded-full flex justify-center items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-blue-500 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 14v-2m0 0V9.5m0 2.5a1.5 1.5 0 01-1.5-1.5V10.5a1.5 1.5 0 013 0v.5a1.5 1.5 0 01-1.5 1.5z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M16 17a2 2 0 10-4 0 2 2 0 004 0zM12 17a2 2 0 10-4 0 2 2 0 004 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2zM10 8.5a.5.5 0 11-1 0 .5.5 0 011 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12.5a.5.5 0 11-1 0 .5.5 0 011 0z" />
                                 </svg>
                             </div>
                             <h3 class="font-bold text-xl text-blue-700 dark:text-blue-400 mt-3">선택약정</h3>
@@ -96,25 +96,37 @@
                     <!-- 공시지원금 -->
                     <div class="bg-red-50 dark:bg-red-900/40 p-6 rounded-lg border border-red-200 dark:border-red-800/60">
                         <div class="flex items-center gap-4">
-                            <div class="shrink-0 text-red-500"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v.01" /></svg></div>
+                            <div class="shrink-0 text-red-500"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" /><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M16 12h.01" /><path stroke-linecap="round" stroke-linejoin="round" d="M11 17h2" /></svg></div>
                             <h3 class="font-bold text-xl text-red-800 dark:text-red-200">공시지원금</h3>
                         </div>
                         <p class="mt-3 text-slate-600 dark:text-slate-400">휴대폰을 처음 개통할 때 <span class="font-semibold">기기값을 한 번에 할인</span>받는 방식입니다.</p>
                         <ul class="mt-4 space-y-2 text-sm">
-                            <li class="flex items-start gap-2"><span class="text-green-500 mt-1">✔</span><div><strong class="font-semibold">장점:</strong> 초기 구매 비용을 크게 낮출 수 있습니다.</div></li>
-                            <li class="flex items-start gap-2"><span class="text-red-500 mt-1">✖</span><div><strong class="font-semibold">단점:</strong> 약정 기간 내 요금제 변경이 어렵고, 할인액이 요금제에 따라 고정됩니다.</div></li>
+                            <li class="flex items-start gap-2">
+                                <div class="shrink-0 text-green-500 mt-0.5"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
+                                <div><strong class="font-semibold">장점:</strong> 초기 구매 비용을 크게 낮출 수 있습니다.</div>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <div class="shrink-0 text-red-500 mt-0.5"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
+                                <div><strong class="font-semibold">단점:</strong> 약정 기간 내 요금제 변경이 어렵고, 할인액이 요금제에 따라 고정됩니다.</div>
+                            </li>
                         </ul>
                     </div>
                     <!-- 선택약정 -->
                     <div class="bg-blue-50 dark:bg-blue-900/40 p-6 rounded-lg border border-blue-200 dark:border-blue-800/60">
                         <div class="flex items-center gap-4">
-                            <div class="shrink-0 text-blue-500"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" /></svg></div>
+                            <div class="shrink-0 text-blue-500"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2zM10 8.5a.5.5 0 11-1 0 .5.5 0 011 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12.5a.5.5 0 11-1 0 .5.5 0 011 0z" /></svg></div>
                             <h3 class="font-bold text-xl text-blue-800 dark:text-blue-200">선택약정</h3>
                         </div>
                         <p class="mt-3 text-slate-600 dark:text-slate-400">기기값 할인을 받지 않는 대신, 약정 기간 동안 <span class="font-semibold">매달 통신요금의 25%를 할인</span>받습니다.</p>
                         <ul class="mt-4 space-y-2 text-sm">
-                            <li class="flex items-start gap-2"><span class="text-green-500 mt-1">✔</span><div><strong class="font-semibold">장점:</strong> 고가 요금제를 쓸수록 할인액이 커지고, 중간에 요금제를 바꿔도 할인율이 유지됩니다.</div></li>
-                            <li class="flex items-start gap-2"><span class="text-red-500 mt-1">✖</span><div><strong class="font-semibold">단점:</strong> 기기값 할인이 없어 초기 구매 비용 부담이 큽니다.</div></li>
+                            <li class="flex items-start gap-2">
+                                <div class="shrink-0 text-green-500 mt-0.5"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
+                                <div><strong class="font-semibold">장점:</strong> 고가 요금제를 쓸수록 할인액이 커지고, 중간에 요금제를 바꿔도 할인율이 유지됩니다.</div>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <div class="shrink-0 text-red-500 mt-0.5"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
+                                <div><strong class="font-semibold">단점:</strong> 기기값 할인이 없어 초기 구매 비용 부담이 큽니다.</div>
+                            </li>
                         </ul>
                     </div>
                 </div>
