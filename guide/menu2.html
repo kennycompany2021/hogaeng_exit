@@ -17,6 +17,7 @@
     <script>
         tailwind.config = { darkMode: 'class' }
     </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 font-sans transition-colors duration-300 flex flex-col min-h-screen">
     <header class="bg-white dark:bg-slate-800 shadow-sm sticky top-0 z-40 w-full">
@@ -24,7 +25,7 @@
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center">
                     <a href="../index.html" class="flex-shrink-0 flex items-center space-x-2">
-                        <img class="h-8 w-auto" src="../logo.svg" alt="호갱탈출 계산기 로고">
+                        <img class="h-8 w-auto" src="../logo_trans.svg" alt="호갱탈출 계산기 로고">
                         <span class="text-xl font-bold text-indigo-600 dark:text-indigo-400 hidden sm:inline">호갱탈출 계산기</span>
                     </a>
                 </div>
@@ -52,27 +53,81 @@
                 <span class="text-slate-500">자급제 + 알뜰폰</span>
             </nav>
             <article class="prose dark:prose-invert max-w-none">
-                <h1 class="text-3xl font-bold text-indigo-600 dark:text-indigo-400 mb-6">최강의 조합, 자급제폰 + 알뜰폰 요금제</h1>
+                <h1 class="text-3xl font-bold text-indigo-600 dark:text-indigo-400 mb-6 text-center">최강의 조합, 자급제 + 알뜰폰</h1>
                 
-                <p>최근 통신비를 아끼는 '현명한 소비자'들 사이에서 가장 주목받는 방법이 바로 '자급제폰'과 '알뜰폰 요금제'의 조합입니다. 통신사 약정에서 벗어나 자유롭고 저렴하게 통신 서비스를 이용할 수 있는 이 조합에 대해 자세히 알아보겠습니다.</p>
+                <p class="text-center text-slate-600 dark:text-slate-400">통신사 약정에서 벗어나 통신비를 최대로 절약하는 방법, 그 과정을 한눈에 확인하세요.</p>
+                
+                <!-- Vertical Timeline -->
+                <div class="mt-12">
+                    <ol class="relative border-l-2 border-indigo-200 dark:border-indigo-800/50 ml-6">
+                        <!-- Step 1 -->
+                        <li class="mb-10 ml-10">
+                            <span class="absolute flex items-center justify-center w-12 h-12 bg-indigo-100 dark:bg-indigo-900/50 rounded-full -left-6 ring-4 ring-white dark:ring-slate-800">
+                                <svg class="w-6 h-6 text-indigo-600 dark:text-indigo-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4z" /></svg>
+                            </span>
+                            <h3 class="flex items-center mb-1 text-xl font-semibold text-slate-900 dark:text-white">1. 자급제폰 구매</h3>
+                            <p class="text-slate-600 dark:text-slate-400">제조사, 대형 쇼핑몰 등에서 원하는 공기계를 직접 구매합니다. 카드사 무이자 할부를 활용하면 부담을 줄일 수 있습니다.</p>
+                        </li>
+                        <!-- Step 2 -->
+                        <li class="mb-10 ml-10">
+                            <span class="absolute flex items-center justify-center w-12 h-12 bg-indigo-100 dark:bg-indigo-900/50 rounded-full -left-6 ring-4 ring-white dark:ring-slate-800">
+                                <svg class="w-6 h-6 text-indigo-600 dark:text-indigo-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9a9 9 0 119 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M9 9.75h.008v.008H9v-.008Zm3.75 0h.008v.008h-.008v-.008Zm-3.75 3.75h.008v.008H9v-.008Zm3.75 0h.008v.008h-.008v-.008Z" /></svg>
+                            </span>
+                            <h3 class="mb-1 text-xl font-semibold text-slate-900 dark:text-white">2. 알뜰폰 유심 신청</h3>
+                            <p class="text-slate-600 dark:text-slate-400">여러 알뜰폰 비교 사이트에서 나에게 맞는 요금제를 골라 유심을 신청합니다. 편의점에서 바로 구매할 수도 있습니다.</p>
+                        </li>
+                        <!-- Step 3 -->
+                        <li class="ml-10">
+                            <span class="absolute flex items-center justify-center w-12 h-12 bg-indigo-100 dark:bg-indigo-900/50 rounded-full -left-6 ring-4 ring-white dark:ring-slate-800">
+                                <svg class="w-6 h-6 text-indigo-600 dark:text-indigo-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M11.127 5.103a11.213 11.213 0 012.752.378 8.963 8.963 0 014.894 8.411c-.004.832-.128 1.65-.378 2.445M12 21a9.002 9.002 0 01-8.485-6.055A8.963 8.963 0 015.103 6.227m6.95-1.124a8.963 8.963 0 018.412 4.894c.25 1.795-.182 3.65-1.124 5.093" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a8.963 8.963 0 01-5.093-1.124m0 0A8.963 8.963 0 013 12c0-1.795.52-3.536 1.431-5.004" /></svg>
+                            </span>
+                             <h3 class="mb-1 text-xl font-semibold text-slate-900 dark:text-white">3. 개통 및 사용</h3>
+                            <p class="text-slate-600 dark:text-slate-400">배송된 유심을 휴대폰에 장착하고, 안내에 따라 개통을 진행하면 바로 서비스를 이용할 수 있습니다.</p>
+                        </li>
+                    </ol>
+                </div>
             
-                <h2 class="text-2xl font-semibold mt-8 mb-4">1. 자급제폰이란?</h2>
-                <p><strong>자급제폰</strong>은 통신사를 거치지 않고 삼성, 애플과 같은 제조사나 쿠팡, 11번가 등의 온라인 쇼핑몰에서 직접 공기계를 구매하는 방식입니다. 통신사 로고나 불필요한 앱 없이 깨끗한 상태의 단말기를 구매하여 원하는 통신사의 유심(USIM)만 꽂으면 바로 사용할 수 있습니다.</p>
-                <ul class="list-disc pl-5">
-                    <li><strong>장점:</strong> 24개월 같은 의무 약정이 없고, 위약금 걱정 없이 언제든 통신사와 요금제를 자유롭게 변경할 수 있습니다.</li>
-                    <li><strong>단점:</strong> 단말기 구매 시 통신사 지원금이 없으므로 초기 구매 비용이 비싸게 느껴질 수 있습니다. (하지만 카드사 무이자 할부 등을 활용하면 부담을 줄일 수 있습니다.)</li>
-                </ul>
+                <div class="grid md:grid-cols-2 gap-8 my-10">
+                    <!-- 자급제폰 카드 -->
+                    <div class="bg-slate-50 dark:bg-slate-800/50 p-6 rounded-xl border border-slate-200 dark:border-slate-700">
+                        <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+                            <svg class="w-7 h-7 text-indigo-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" /></svg>
+                            1. 자급제폰이란?
+                        </h2>
+                        <p class="mb-4">통신사를 거치지 않고 제조사나 쇼핑몰에서 <strong>공기계를 직접 구매</strong>하는 방식입니다.</p>
+                        <ul class="space-y-2 !p-0">
+                            <li class="flex items-start gap-3"><strong class="font-semibold text-green-600 dark:text-green-400 w-12 shrink-0">장점:</strong> <span>의무 약정, 위약금 걱정 없이 언제든 통신사와 요금제를 자유롭게 변경할 수 있습니다.</span></li>
+                            <li class="flex items-start gap-3"><strong class="font-semibold text-red-600 dark:text-red-400 w-12 shrink-0">단점:</strong> <span>초기 구매 비용이 비싸게 느껴질 수 있으나, 카드사 무이자 할부 등으로 부담을 줄일 수 있습니다.</span></li>
+                        </ul>
+                    </div>
+                    <!-- 알뜰폰 요금제 카드 -->
+                    <div class="bg-slate-50 dark:bg-slate-800/50 p-6 rounded-xl border border-slate-200 dark:border-slate-700">
+                        <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+                             <svg class="w-7 h-7 text-indigo-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9a9 9 0 1 1 9 0Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M9 9.75h.008v.008H9v-.008Zm3.75 0h.008v.008h-.008v-.008Zm-3.75 3.75h.008v.008H9v-.008Zm3.75 0h.008v.008h-.008v-.008Z" /></svg>
+                            2. 알뜰폰 요금제란?
+                        </h2>
+                        <p class="mb-4">대형 통신사(SKT, KT, LGU+)의 망을 빌려 <strong>저렴하게 제공하는 통신 서비스</strong>입니다.</p>
+                         <ul class="space-y-2 !p-0">
+                            <li class="flex items-start gap-3"><strong class="font-semibold text-green-600 dark:text-green-400 w-12 shrink-0">장점:</strong> <span>통화/데이터 품질은 동일하면서 요금은 훨씬 저렴하고, 대부분 무약정이라 자유롭습니다.</span></li>
+                            <li class="flex items-start gap-3"><strong class="font-semibold text-red-600 dark:text-red-400 w-12 shrink-0">단점:</strong> <span>멤버십, 가족 결합 등 부가 혜택이 부족하고 고객센터 연결이 원활하지 않을 수 있습니다.</span></li>
+                        </ul>
+                    </div>
+                </div>
 
-                <h2 class="text-2xl font-semibold mt-8 mb-4">2. 알뜰폰 요금제란?</h2>
-                <p><strong>알뜰폰(MVNO)</strong>은 SKT, KT, LGU+ 같은 대형 통신사의 통신망을 빌려서 사용자에게 저렴하게 제공하는 통신 서비스를 말합니다. 망을 직접 구축하고 관리하는 비용이 없기 때문에, <strong>통화 품질은 동일하면서도 요금은 훨씬 저렴</strong>한 것이 가장 큰 특징입니다.</p>
-                <ul class="list-disc pl-5">
-                    <li><strong>장점:</strong> 월 1~3만 원대에도 충분한 데이터와 통화를 제공하는 가성비 높은 요금제가 많습니다. 대부분 무약정이라 언제든 해지하거나 변경할 수 있습니다.</li>
-                    <li><strong>단점:</strong> 멤버십 혜택이나 가족 결합 할인이 부족한 경우가 많고, 고객센터 연결이 대형 통신사만큼 원활하지 않을 수 있습니다.</li>
-                </ul>
+                <div class="mt-12">
+                     <h2 class="text-2xl font-bold text-center mb-4">결론: 자급제 + 알뜰폰, 최고의 선택일까?</h2>
+                     <div class="bg-slate-100 dark:bg-slate-800/50 p-6 rounded-xl border border-slate-200 dark:border-slate-700">
+                        <p class="text-center text-slate-700 dark:text-slate-300">
+                           초기 비용 부담만 해결할 수 있다면, 자급제와 알뜰폰 조합은 현재 가장 저렴하게 통신 서비스를 이용할 수 있는 방법임이 분명합니다. 특히 약정에 얽매이고 싶지 않거나, 데이터 사용량이 많지 않은 사용자에게 강력 추천합니다.
+                        </p>
+                    </div>
+                </div>
 
-                <h2 class="text-2xl font-semibold mt-8 mb-4">결론: 왜 최강의 조합일까?</h2>
-                <p>자급제폰으로 단말기를 구매하고, 알뜰폰 유심을 꽂아 사용하는 조합은 <strong>'약정 탈출'</strong>과 <strong>'저렴한 요금'</strong>이라는 두 마리 토끼를 모두 잡는 가장 합리적인 방법입니다.</p>
-                <p>초기 단말기 구매 비용은 발생하지만, 2년간 내는 총 통신비를 계산해보면 통신사 약정보다 훨씬 저렴한 경우가 대부분입니다. 호갱탈출 계산기의 '자급제 구매 시' 비용과 '통신사 약정 구매 시' 비용을 비교해보면 그 차이를 명확하게 확인할 수 있습니다.</p>
+                <div class="mt-12">
+                    <a href="../index.html" class="block w-full text-center py-4 px-6 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-lg shadow-md transition-transform transform hover:scale-105">
+                        통신사 약정과 총 비용 비교해보기 →
+                    </a>
+                </div>
             </article>
         </div>
     </main>
@@ -100,8 +155,8 @@
             </a>
             <a href="../contact.html" class="flex flex-col items-center justify-center text-center p-3 text-slate-600 hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-400 w-1/5">
                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                   <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
+                   <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                 </svg>
                 <span class="text-xs font-medium">문의하기</span>
             </a>
         </div>

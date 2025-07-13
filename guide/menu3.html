@@ -17,6 +17,7 @@
     <script>
         tailwind.config = { darkMode: 'class' }
     </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 font-sans transition-colors duration-300 flex flex-col min-h-screen">
     <header class="bg-white dark:bg-slate-800 shadow-sm sticky top-0 z-40 w-full">
@@ -24,7 +25,7 @@
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center">
                     <a href="../index.html" class="flex-shrink-0 flex items-center space-x-2">
-                        <img class="h-8 w-auto" src="../logo.svg" alt="호갱탈출 계산기 로고">
+                        <img class="h-8 w-auto" src="../logo_trans.svg" alt="호갱탈출 계산기 로고">
                         <span class="text-xl font-bold text-indigo-600 dark:text-indigo-400 hidden sm:inline">호갱탈출 계산기</span>
                     </a>
                 </div>
@@ -52,35 +53,98 @@
                 <span class="text-slate-500">통신 용어 사전</span>
             </nav>
             <article class="prose dark:prose-invert max-w-none">
-                <h1 class="text-3xl font-bold text-indigo-600 dark:text-indigo-400 mb-6">꼭 알아야 할 통신 용어 사전</h1>
-                
-                <p>휴대폰 판매점의 현란한 말솜씨에 고개를 끄덕였지만, 사실 무슨 말인지 정확히 이해하지 못한 경험, 다들 한 번쯤 있으시죠? 아는 것이 힘! 호갱탈출을 위해 꼭 알아야 할 핵심 통신 용어들을 알기 쉽게 정리했습니다.</p>
+                <div class="text-center">
+                    <h1 class="text-3xl font-bold text-indigo-600 dark:text-indigo-400 mb-4">꼭 알아야 할 통신 용어 사전</h1>
+                    <p class="text-slate-600 dark:text-slate-400">아는 것이 힘! 호갱탈출을 위해 꼭 알아야 할 핵심 용어들을 모았습니다.<br> 궁금한 용어를 클릭하여 설명을 확인해보세요.</p>
+                </div>
             
-                <div class="space-y-6">
-                    <div>
-                        <h3 class="font-bold text-lg">출고가</h3>
-                        <p>제조사에서 처음으로 단말기를 내놓을 때 책정한 순수 기계값입니다. 어떤 할인도 적용되지 않은 원래 가격이라고 생각하면 쉽습니다.</p>
+                <div id="accordion-container" class="mt-10 space-y-3">
+                    <!-- Term 1: 출고가 -->
+                    <div class="accordion-item bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-lg">
+                        <h2>
+                            <button type="button" class="accordion-toggle flex items-center justify-between w-full p-5 font-medium text-left text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800/60 rounded-t-lg">
+                                <span class="flex items-center gap-3"><svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 21v-7.5a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75V21m-4.5 0H2.25pc-1.5 0-1.5-.75-1.5-1.5V3.75c0-.828.75-1.5 1.5-1.5h12.75c.828 0 1.5.75 1.5 1.5v9" /></svg>출고가</span>
+                                <svg class="accordion-arrow w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </button>
+                        </h2>
+                        <div class="accordion-content hidden p-5 border-t border-slate-200 dark:border-slate-700">
+                            <p class="text-slate-600 dark:text-slate-400">제조사에서 처음으로 단말기를 내놓을 때 책정한 순수 기계값입니다. 어떤 할인도 적용되지 않은 원래 가격이라고 생각하면 쉽습니다.</p>
+                        </div>
                     </div>
-                    <div>
-                        <h3 class="font-bold text-lg">공시지원금</h3>
-                        <p>통신사에서 고객을 유치하기 위해 제공하는 단말기 할인 금액입니다. 보통 24개월 약정을 조건으로 하며, 사용하는 요금제가 비쌀수록 지원금도 많아집니다. '기기값 할인'과 같은 의미입니다.</p>
+                    <!-- Term 2: 공시지원금 -->
+                    <div class="accordion-item bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-lg">
+                        <h2>
+                            <button type="button" class="accordion-toggle flex items-center justify-between w-full p-5 font-medium text-left text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800/60 rounded-t-lg">
+                                <span class="flex items-center gap-3"><svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>공시지원금</span>
+                                <svg class="accordion-arrow w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </button>
+                        </h2>
+                        <div class="accordion-content hidden p-5 border-t border-slate-200 dark:border-slate-700">
+                             <p class="text-slate-600 dark:text-slate-400">통신사에서 고객을 유치하기 위해 제공하는 단말기 할인 금액입니다. 보통 24개월 약정을 조건으로 하며, 사용하는 요금제가 비쌀수록 지원금도 많아집니다. '기기값 할인'과 같은 의미입니다.</p>
+                        </div>
                     </div>
-                    <div>
-                        <h3 class="font-bold text-lg">선택약정할인</h3>
-                        <p>공시지원금을 받지 않는 대신, 12개월 또는 24개월 동안 매월 통신 요금의 25%를 할인받는 제도입니다. '요금 할인'이라고 생각하면 됩니다.</p>
+                    <!-- Term 3: 선택약정할인 -->
+                     <div class="accordion-item bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-lg">
+                        <h2>
+                            <button type="button" class="accordion-toggle flex items-center justify-between w-full p-5 font-medium text-left text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800/60 rounded-t-lg">
+                                <span class="flex items-center gap-3"><svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>선택약정할인</span>
+                                <svg class="accordion-arrow w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </button>
+                        </h2>
+                        <div class="accordion-content hidden p-5 border-t border-slate-200 dark:border-slate-700">
+                             <p class="text-slate-600 dark:text-slate-400">공시지원금을 받지 않는 대신, 12개월 또는 24개월 동안 매월 통신 요금의 25%를 할인받는 제도입니다. '요금 할인'이라고 생각하면 됩니다.</p>
+                        </div>
                     </div>
-                    <div>
-                        <h3 class="font-bold text-lg">할부원금</h3>
-                        <p><strong>가장 중요한 개념입니다.</strong> 출고가에서 공시지원금, 대리점 추가 지원금 등을 모두 뺀 후, 최종적으로 내가 할부로 납부해야 하는 실제 단말기 가격입니다. 계약서에 서명하기 전 '할부원금 000원'을 반드시 확인해야 합니다.</p>
+                    <!-- Term 4: 할부원금 -->
+                    <div class="accordion-item bg-indigo-50 dark:bg-indigo-900/40 border-2 border-indigo-300 dark:border-indigo-700 rounded-lg">
+                        <h2>
+                            <button type="button" class="accordion-toggle flex items-center justify-between w-full p-5 font-semibold text-left text-indigo-800 dark:text-indigo-200 hover:bg-indigo-100 dark:hover:bg-indigo-900/60 rounded-t-lg">
+                                <span class="flex items-center gap-3"><svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0 0 12 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18" /></svg>할부원금 (⭐가장 중요⭐)</span>
+                                <svg class="accordion-arrow w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </button>
+                        </h2>
+                        <div class="accordion-content hidden p-5 border-t border-indigo-300 dark:border-indigo-700">
+                            <p class="text-indigo-700 dark:text-indigo-300">출고가에서 공시지원금, 대리점 추가 지원금 등을 모두 뺀 후, 최종적으로 내가 할부로 납부해야 하는 실제 단말기 가격입니다. <strong>계약서에 서명하기 전 '할부원금 000원'을 반드시 확인해야 합니다.</strong></p>
+                        </div>
                     </div>
-                    <div>
-                        <h3 class="font-bold text-lg">위약금 (할인반환금)</h3>
-                        <p>공시지원금이나 선택약정할인을 받아 약정 기간을 채우지 못하고 중간에 해지할 경우, 그동안 할인받았던 금액의 일부를 다시 통신사에 돌려주는 돈입니다. 남은 약정 기간에 따라 금액이 달라집니다.</p>
+                    <!-- Term 5: 위약금 -->
+                    <div class="accordion-item bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-lg">
+                        <h2>
+                            <button type="button" class="accordion-toggle flex items-center justify-between w-full p-5 font-medium text-left text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800/60 rounded-t-lg">
+                                <span class="flex items-center gap-3"><svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" /></svg>위약금 (할인반환금)</span>
+                                <svg class="accordion-arrow w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </button>
+                        </h2>
+                        <div class="accordion-content hidden p-5 border-t border-slate-200 dark:border-slate-700">
+                            <p class="text-slate-600 dark:text-slate-400">공시지원금이나 선택약정할인을 받아 약정 기간을 채우지 못하고 중간에 해지할 경우, 그동안 할인받았던 금액의 일부를 다시 통신사에 돌려주는 돈입니다. 남은 약정 기간에 따라 금액이 달라집니다.</p>
+                        </div>
                     </div>
-                    <div>
-                        <h3 class="font-bold text-lg">자급제</h3>
-                        <p>통신사를 통하지 않고 제조사나 쇼핑몰 등에서 공기계를 직접 구매하는 방식입니다. 의무 약정이나 특정 요금제 사용 조건이 없어 자유롭습니다.</p>
+                     <!-- Term 6: 자급제 -->
+                    <div class="accordion-item bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-lg">
+                        <h2>
+                            <button type="button" class="accordion-toggle flex items-center justify-between w-full p-5 font-medium text-left text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800/60 rounded-t-lg">
+                                <span class="flex items-center gap-3"><svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" /></svg>자급제</span>
+                                <svg class="accordion-arrow w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </button>
+                        </h2>
+                        <div class="accordion-content hidden p-5 border-t border-slate-200 dark:border-slate-700">
+                            <p class="text-slate-600 dark:text-slate-400">통신사를 통하지 않고 제조사나 쇼핑몰 등에서 공기계를 직접 구매하는 방식입니다. 의무 약정이나 특정 요금제 사용 조건이 없어 자유롭습니다.</p>
+                        </div>
                     </div>
+                </div>
+                <div class="mt-12">
+                     <h2 class="text-2xl font-bold text-center mb-4">결론: 용어를 알면 길이 보인다</h2>
+                     <div class="bg-slate-100 dark:bg-slate-800/50 p-6 rounded-xl border border-slate-200 dark:border-slate-700">
+                        <p class="text-center text-slate-700 dark:text-slate-300">
+                           모든 용어를 외울 필요는 없습니다. 하지만 '할부원금'과 같이 구매 비용에 직접적인 영향을 미치는 핵심 용어 몇 가지만 알아두어도, 판매자의 말에 휘둘리지 않고 주체적인 결정을 내릴 수 있습니다.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-12">
+                    <a href="../index.html" class="block w-full text-center py-4 px-6 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-lg shadow-md transition-transform transform hover:scale-105">
+                        용어도 익혔으니, 실전 계산하러 가기 →
+                    </a>
                 </div>
             </article>
         </div>
@@ -137,6 +201,27 @@
         
         themeToggleBtn.addEventListener('click', () => {
             setTheme(!document.documentElement.classList.contains('dark'));
+        });
+    </script>
+    <script>
+        // --- Accordion ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const accordionItems = document.querySelectorAll('.accordion-item');
+            accordionItems.forEach(item => {
+                const toggle = item.querySelector('.accordion-toggle');
+                const content = item.querySelector('.accordion-content');
+                const arrow = item.querySelector('.accordion-arrow');
+
+                toggle.addEventListener('click', () => {
+                    const isVisible = !content.classList.contains('hidden');
+                    // Optional: Close all other items
+                    // document.querySelectorAll('.accordion-content').forEach(ac => ac.classList.add('hidden'));
+                    // document.querySelectorAll('.accordion-arrow').forEach(ar => ar.classList.remove('rotate-180'));
+                    
+                    content.classList.toggle('hidden');
+                    arrow.classList.toggle('rotate-180', !isVisible);
+                });
+            });
         });
     </script>
 </body>
