@@ -1,6 +1,36 @@
 {
     "list" : [
         {
+            "name": "갤럭시 Z 폴드7 256G",
+            "price": "2379300",
+            "link": "https://link.coupang.com/a/cGrdW0"
+        },
+        {
+            "name": "갤럭시 Z 폴드7 512G",
+            "price": "2537700",
+            "link": "https://link.coupang.com/a/cGrebH"
+        },
+        {
+            "name": "갤럭시 Z 폴드7 1TB",
+            "price": "2933700",
+            "link": "https://link.coupang.com/a/cGrenG"
+        },
+        {
+            "name": "갤럭시 Z 플립7 FE 256G",
+            "price": "1199000",
+            "link": "https://link.coupang.com/a/cGrdL7"
+        },
+        {
+            "name": "갤럭시 Z 플립7 256G",
+            "price": "1485000",
+            "link": "https://link.coupang.com/a/cGrc9b"
+        },
+        {
+            "name": "갤럭시 Z 플립7 512G",
+            "price": "1643400",
+            "link": "https://link.coupang.com/a/cGrdnG"
+        },
+        {
             "name": "갤럭시 와이드7 128G",
             "price": "374000",
             "link": "https://link.coupang.com/a/cEbFhH"
@@ -134,36 +164,6 @@
             "name": "갤럭시 Z 플립6 512G",
             "price": "1643400",
             "link": "https://link.coupang.com/a/cEbE8b"
-        },
-        {
-            "name": "갤럭시 Z 플립7 FE 256G",
-            "price": "1199000",
-            "link": "https://link.coupang.com/a/cGrdL7"
-        },
-        {
-            "name": "갤럭시 Z 플립7 256G",
-            "price": "1485000",
-            "link": "https://link.coupang.com/a/cGrc9b"
-        },
-        {
-            "name": "갤럭시 Z 플립7 512G",
-            "price": "1643400",
-            "link": "https://link.coupang.com/a/cGrdnG"
-        },
-        {
-            "name": "갤럭시 Z 폴드7 256G",
-            "price": "2379300",
-            "link": "https://link.coupang.com/a/cGrdW0"
-        },
-        {
-            "name": "갤럭시 Z 폴드7 512G",
-            "price": "2537700",
-            "link": "https://link.coupang.com/a/cGrebH"
-        },
-        {
-            "name": "갤럭시 Z 폴드7 1TB",
-            "price": "2933700",
-            "link": "https://link.coupang.com/a/cGrenG"
         },
         {
             "name": "아이폰16 128GB",
